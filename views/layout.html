@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <link rel="shortcut icon" href="docs-assets/ico/favicon.png">
 
     <title>garçon | {{{title}}}</title>
@@ -71,11 +72,11 @@
      <script src="/js/bootstrap-datepicker.js"></script>
      <script src="bootstrap-datepicker/js/locales/bootstrap-datepicker.de.js" charset="UTF-8"></script>
     <script>
-      $('#date-container input').datepicker({
+      /*$('#date-container input').datepicker({
          format: 'dd.mm.yyyy',
          startDate: '0',
          todayBtn: true
-       });
+       });*/
 
       
       $('.menu').click(function(){
@@ -85,6 +86,20 @@
         $(this).children('.counter').text(newquantitiy+" x");
       });
 
-    </script>
+      var today = new Date();
+      var today = ('0' + (today.getDate()+1)).slice(-2)+'.'+('0' + (today.getMonth()+1)).slice(-2)+'.'+today.getFullYear();
+      $( "#fdate" ).val(today);
+
+   $( "#date" ).change(function() {
+    //var today = $(this).getDate+'.'+$(this).getMonth+'.'+$(this).getFullYear;
+    var unformatted = $(this).val();
+    var year = unformatted.substring(0,4);
+    var month = unformatted.substring(5,7);
+    var date = unformatted.substring(8,10);
+    var formatted = date+"."+month+"."+year;
+    $( "#fdate" ).val(formatted);
+});
+
+</script>
   </body>
 </html>

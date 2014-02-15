@@ -2,14 +2,21 @@
 
 <form method='post' action='/selectrestaurant' enctype='multipart/form-data' role="form" class="form-inline">
 	
-<div class="form-group" style="width:100%;margin-bottom: 15px;">
+<div class="form-group" style="width:100%;margin-bottom: 15px;position:relative;">
+	<!--
 	<div id="date-container">
-		<input type="text" class="form-control" id="date" name="date"  placeholder="date">
+		
 	</div>
+-->
+	<input type="date" class="form-control" id="date" name="date"  placeholder="date">
+	<input type="text" class="form-control" id="fdate" value="click a button" value="" style="width:60%; top:0; left: 20%; margin:auto; position:absolute;">
+	
 </div>
 <br/>
- <div class="form-group" style="width:100%; margin-bottom: 15px;">
-    <input type="time" class="form-control" id="restime" name="restime" placeholder="time">
+
+
+ <div class="form-group" style="width:100%; margin-bottom:15px;">
+    <input type="time" class="form-control" id="restime" name="restime" placeholder="time" style="width:100%;">
  </div>
 <br/>
 <!--
