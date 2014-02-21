@@ -3,39 +3,19 @@
 <form method='post' action='/selectrestaurant' enctype='multipart/form-data' role="form" class="form-inline">
 	
 <div class="form-group" style="width:100%;margin-bottom: 15px;position:relative;">
-	<!--
-	<div id="date-container">
-		
-	</div>
--->
-	<input type="date" class="form-control" id="date" name="date"  placeholder="date" style="width:100%;">
-	<input type="text" class="form-control" id="fdate" value="click a button" value="" style="width:60%; top:0; left: 20%; margin:auto; position:absolute;">
-	
-</div>
-<br/>
 
-
- <div class="form-group" style="width:100%; margin-bottom:15px;">
+	<input type="date" class="form-control" id="date" name="date"  placeholder="date" style="width:100%;" value="{{datehtmlformated date}}">
     <input type="time" class="form-control" id="restime" name="restime" placeholder="time" style="width:100%;">
- </div>
-<br/>
-<!--
- <div class="form-group">
-    <input type="text" class="form-control" id="guests" placeholder="+ guest">
- </div>
--->
-<div class="form-group" style="width:100%; margin-bottom: 15px;">
-	<select id="guests" class="form-control" id="guests" style="width:100%;">
-		<option value="0">0 guests</option>
+
+	<select class="form-control" id="guests" style="width:100%;">
 		<option value="1">1 guest</option>
 		<option value="2">2 guests</option>
 	  	<option value="3">3 guests</option>
 		<option value="4">4 guests</option>
 	</select>
 </div>
-<br/>
 
-<button type="submit" name="bla" style="height:40px; width:100%; background-color : #d1d1d1; font-size: 20px; text-align: center; vertical-align: middle;line-height:40px;font-family: 'Carme', sans-serif; border:none;">restaurant</button>
+<button type="submit" name="bla" class="btn">restaurant</button>
 
 </form>
 

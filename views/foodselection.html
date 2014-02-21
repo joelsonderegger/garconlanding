@@ -1,13 +1,19 @@
 <h1>ménu</h1>
 
  {{#each menus}}
-
-
- 		<div class="menu" style="width:100%; background-color : #d1d1d1; height: 100%;  text-align: center; vertical-align: middle; padding:10px; margin-bottom: 15px;">
- 			<div class="counter"></div><p style="font-weight:bold; margin-bottom:5px;">{{this.name}}</p>
- 			{{this.description}}<br>CHF {{this.price}}
+ 		<div class="menu" style="position: relative; width:100%; background-color : #d1d1d1;  text-align: center; vertical-align: middle; margin-bottom: 15px;">
+ 		<div class="quantitycontrol">
+ 			<div class="qplus">
+ 				<span class="glyphicon glyphicon-plus"></span>
+	 		</div>
+	 		<div class="counter"></div>
+	 		<div class="qminus">
+	 			<span class="glyphicon glyphicon-minus"></span>
+	 		</div>
+	 	</div>
+ 		<p style="font-weight:bold; margin-bottom:5px; font-size:18px">{{this.name}}</p>
+ 			{{this.description}}<br><br>CHF {{this.price}}
  		</div>
-
 
  {{/each}}
 
