@@ -3,7 +3,7 @@
 <form method='post' action='/requestconfirmation' enctype='multipart/form-data' role="form" class="form-inline">
  {{#each restaurants}}
 
-  <button type="submit" name="restaurantname" value="{{this.name}}" style="height:40px; width:100%; background-color : #d1d1d1; font-size: 20px; text-align: center; vertical-align: middle;line-height:40px;font-family: 'Carme', sans-serif; border:none; margin-bottom:10px;">{{this.name}}</button>
+  <button type="submit" name="restaurantname" value="{{this.name}}" class="btn">{{this.name}}</button>
  {{/each}}
 </form>
 

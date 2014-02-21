@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "express": "~3.3.4",
-    "hbs":"*",
+    "hbs": "*",
     "mongoose": "2.6.5"
   },
   "engines": {
