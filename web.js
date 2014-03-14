@@ -20,7 +20,7 @@ app.set('view engine', 'html');
 app.engine('html', hbs.__express);
 app.use(express.bodyParser());
 
-
+/*
 hbs.registerHelper('prettifyDate', function(unformated) {
   return moment(unformated).format('DD.MM.YYYY');
 });
@@ -28,57 +28,20 @@ hbs.registerHelper('prettifyDate', function(unformated) {
 hbs.registerHelper('datehtmlformated', function(unformated) {
   return moment(unformated).format('YYYY-MM-DD');
 });
+*/
 
-var restaurants=[
-					{	
-						name:"Bärengasse",
-						menu:
-							[
-								{
-									name:"RAVIOLI „BÄRENGASSE“",
-									description:"Mit Rindsfilet und Gemüse gefüllt, dazu Salbeibutter und Parmesan",
-									price:33
-								},
-								{
-									name:"GEMÜSERISOTTO",
-									description:"Weissweinrisotto mit grilliertem, mediterranem Gemüse",
-									price:24
-								},
-							]
-					}, 
-					{	
-						name:"Bohemia",
-						menu:
-							[
-								{
-									name:"Beetroot Potato Salad“",
-									description:"in Salz gebackene Randen, Kartoffeln, Chornichos und Schalotten",
-									price:19
-								},
-								{
-									name:"Shrimps Fettuccine",
-									description:"Fettuccine mit Black Tiger Crevetten, Ofentomaten, Rosmarin, Thymian und Dill",
-									price:28
-								},
-							]
-					},
-					{	
-						name:"Aura",
-						menu:
-							[
-								{
-									name:"Beef burger",
-									description:"mit Kabissalat und gebackenen Kartoffelecken",
-									price:32
-								},
-								{
-									name:"Grillierte Black Tiger Krevetten",
-									description:"mit Kräutern und Knoblauch",
-									price:42
-								},
-							]
-					}
-				];
+app.get('/', function(req,res){
+	res.render('index',{title:"Willkommen", imagename:"iphoneunscharf"});
+});
+
+app.post('/register', function(req,res){
+
+	var email = req.body.email;
+
+	res.render('bestaetigung',{title:"Besten Dank für Ihr Interesse", imagename:"iphonescharf"});
+});
+
+/*
 
 app.get('/', function(req, res){
 
@@ -93,7 +56,7 @@ app.get('/definereservationrequest', function(req, res){
 	if (req.session.date != "" && req.session.restime != "" && req.session.guest != ""){
 
 	}
-	*/
+	*//*
 	console.log(req.session.date);
 
 	res.render('definereservationrequest',{
@@ -163,7 +126,7 @@ app.get('/orderconfirmation', function(req, res){
 		restaurant:req.session.restaurantname
 	});
 });
-
+*/
 /*
 app.get('/', function(req, res){
 	 res.redirect('/showroom');
@@ -245,11 +208,11 @@ app.get('/admin', function(req, res){
 });
 
 */
-
+/*
 app.get('bootstrapelements', function(req, res){
 	res.render('bootstrapelements', {title:"bootstrapelements"});
 });
-
+*/
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
