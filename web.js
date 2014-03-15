@@ -1,21 +1,19 @@
 var express = require('express');
 var fs = require('fs');
 var hbs = require('hbs');
-var Quote = require('./models/Quote.js');
+
 var routes = require('./routes');
 var moment = require('moment');
 
 var app = express();
-app.use(express.logger());
 
+app.use(express.logger());
 app.configure(function(){
 	app.use(express.static(__dirname + '/public'));
     app.use(express.bodyParser());
-    app.use(express.cookieParser());
-	app.use(express.session({secret: '1234567890QWERTY'}));
 });
 
-var blogEngine = require('./dailyquotare');
+var registerEngine = require('./models/registerengine.js');
 app.set('view engine', 'html');
 app.engine('html', hbs.__express);
 app.use(express.bodyParser());
@@ -36,10 +34,15 @@ app.get('/', function(req,res){
 
 app.post('/register', function(req,res){
 
-	var email = req.body.email;
+	registerEngine.addRegistration(req.body.email, function(err) {
+		  	/// redirect to root
+		  	res.render('bestaetigung',{title:"Besten Dank für Ihr Interesse", imagename:"iphonescharf"});
 
-	res.render('bestaetigung',{title:"Besten Dank für Ihr Interesse", imagename:"iphonescharf"});
+  	});		  
 });
+
+	
+
 
 /*
 
