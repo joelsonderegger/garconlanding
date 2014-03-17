@@ -169,10 +169,14 @@ h1{
   border: 1px solid #debb6f;
 }
 
+.vertraulich {
+  color:#a8a8a8;
+  font-size: 17px;
+}
 
 
 .form-control{
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   width: 100%;
 }
 .form-control::-webkit-input-placeholder { /* WebKit browsers */
